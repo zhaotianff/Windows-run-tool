@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Windows_run_tool.Compare;
 using Windows_run_tool.IO;
 using Windows_run_tool.Model;
 using Windows_run_tool.Reg;
@@ -37,26 +38,34 @@ namespace Windows_run_tool
 
         private async void LoadRunList()
         {
-            await LoadRegisterRunItem();
+            var app1List = await LoadExecutableItemAsync();
+            var app2List = await LoadRegisterRunItemAsync();
+            this.listview.ItemsSource = app1List.Union(app2List,new RunItemComparer());
         }
 
-        private async Task<List<RunItem>> LoadSystem32DirItemAsync()
+        private async Task<IEnumerable<RunItem>> LoadExecutableItemAsync()
         {
             var list = new List<RunItem>();
 
             try
             {
                 await Task.Run(()=> {
-                    var windir = Environment.GetEnvironmentVariable("windir");
+                    var path = Environment.GetEnvironmentVariable("Path");
+                    var pathText = Environment.GetEnvironmentVariable("PathExt");
 
-                    if (string.IsNullOrEmpty(windir))
+                    var pathArray = path.Split(';');
+                    var pathTextArray = pathText.Split(';');
+                    pathTextArray = pathTextArray.ToList().Select(x => x.ToLower()).ToArray();
+
+                    foreach (var item in pathArray)
                     {
-                        windir = "C:\\Windows";
-                    }
+                        if (System.IO.Directory.Exists(item) == false)
+                            continue;
 
-                    var sys32dir = System.IO.Path.Combine(windir, "System32");
-                    var files = DirectoryExtension.GetFiles(sys32dir, ".msc", ".cpl");
-                    list =  files.Select(x => new RunItem() { Name = System.IO.Path.GetFileName(x), Path = x, Description = FileExtension.GetFileDescription(x) }).ToList();
+                        var files = DirectoryExtension.GetFiles(item, pathTextArray);
+                        var runItems =  files.Select(x => new RunItem() { Name = System.IO.Path.GetFileName(x), Path = x, Description = FileExtension.GetFileDescription(x) });
+                        list.AddRange(runItems);
+                    }                                     
                 });
 
                 return list;
@@ -67,7 +76,20 @@ namespace Windows_run_tool
             }
         }
 
-        private async Task<List<RunItem>> LoadRegisterRunItem()
+        private async Task<IEnumerable<RunItem>> LoadRegisterRunItemAsync()
+        {
+            var appPath1 = @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths";
+            //var appPath2 = @"Applications";
+
+            var appList1 = await GetAppListAsync(Microsoft.Win32.Registry.LocalMachine, appPath1);
+
+            //右键菜单 
+            //var appList2 = await GetAppListAsync(Microsoft.Win32.Registry.ClassesRoot, appPath2);
+
+            return appList1;
+        }
+
+        private async Task<List<RunItem>> GetAppListAsync(Microsoft.Win32.RegistryKey registryKey, string path)
         {
             var list = new List<RunItem>();
 
@@ -75,24 +97,24 @@ namespace Windows_run_tool
             {
                 await Task.Run(() =>
                 {
-                    var appList1 = RegisterExtension.GetRegItem(Microsoft.Win32.Registry.LocalMachine, @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths");
-                    var appList2 = RegisterExtension.GetRegItem(Microsoft.Win32.Registry.ClassesRoot, @"Applications");
+                    var appList = RegisterExtension.GetRegItem(registryKey, path);
 
-                    foreach (var item in appList1)
+                    foreach (var item in appList)
                     {
                         var runitem = new RunItem();
                         runitem.Name = item;
-                        var fullPath = RegisterExtension.GetRegValue(Microsoft.Win32.Registry.LocalMachine, @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\" + item, null);
+                        var fullPath = RegisterExtension.GetRegValue(registryKey, path + "\\" + item, null);
 
                         if (string.IsNullOrEmpty(fullPath))
                             continue;
 
-                        fullPath = fullPath.Replace('"', ' ');
+                        fullPath = fullPath.Replace('"', ' ').Trim();
 
                         if (System.IO.File.Exists(fullPath))
                             runitem.Path = fullPath;
                         else
                             runitem.Path = System.IO.Path.Combine(fullPath, item);
+
                         runitem.Description = FileExtension.GetFileDescription(runitem.Path);
                         list.Add(runitem);
                     }
@@ -105,5 +127,25 @@ namespace Windows_run_tool
                 return list;
             }
         }
+
+        #region Event
+        private void listview_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listview.SelectedIndex == -1)
+                return;
+
+            this.tbox_Command.Text = (listview.SelectedItem as RunItem).Path;
+        }
+
+        private void Run_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(this.tbox_Command.Text.Trim());
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }

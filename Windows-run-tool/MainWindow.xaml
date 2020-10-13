@@ -20,7 +20,7 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
 
-            <ListView Name="listview" Margin="8">
+            <ListView Name="listview" Margin="8" SelectionChanged="listview_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="运行项" Width="200" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
@@ -36,11 +36,12 @@
                 </Grid.RowDefinitions>
 
                 <Label Content="选中的命令" VerticalAlignment="Center"/>
-                <TextBox Margin="10,3" Grid.Row="1"/>
+                <TextBox Margin="10,3" Grid.Row="1" Name="tbox_Command" IsReadOnly="True"/>
             </Grid>
 
             <Grid  Grid.Row="2">
-                <Button Content="确定" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,10,0"/>
+                <Button Content="启动" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,120,0" Click="Run_Click"/>
+                <Button Content="确定" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,10,0" Click="Exit_Click"/>
             </Grid>
         </Grid>
     </Grid>
