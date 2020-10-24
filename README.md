@@ -34,7 +34,7 @@ Windows 10 run list
 <br/>
 <div align="center">
 	<img align="center" alt="Windows run tool" src="Screenshots/3.gif"></img>
-	<p>演示</p>
+	<p>demo(Windows 10 v1703 Some ms-settings are not supported)</p>
 </div>
 
 ## License
