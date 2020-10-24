@@ -23,7 +23,7 @@ Windows 10 run list
 
 ## Screenshots
 <div align="center">
-	<img align="center" alt="Windows run tool" src="Screenshots/1.jpg"></img>
+	<img align="center" alt="Windows run tool" src="Screenshots/1.png"></img>
 </div>  
 <br/>
 <br/>
