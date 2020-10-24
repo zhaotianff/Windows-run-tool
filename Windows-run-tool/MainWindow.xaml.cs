@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Windows_run_tool.Compare;
+using Windows_run_tool.Helper;
 using Windows_run_tool.IO;
 using Windows_run_tool.Model;
 using Windows_run_tool.Reg;
@@ -24,6 +26,8 @@ namespace Windows_run_tool
     /// </summary>
     public partial class MainWindow : TianXiaTech.BlurWindow
     {
+        private static readonly string MsSettingsUrl = "https://docs.microsoft.com/{lang}/windows/uwp/launch-resume/launch-settings-app";
+
         List<RunItem> runList = new List<RunItem>();
 
         public MainWindow()
@@ -40,7 +44,9 @@ namespace Windows_run_tool
         {
             var app1List = await LoadExecutableItemAsync();
             var app2List = await LoadRegisterRunItemAsync();
-            this.listview.ItemsSource = app1List.Union(app2List,new RunItemComparer());
+            var app3List = await LoadMsSettingsAsync();
+            var list = app1List.Union(app2List,new RunItemComparer()).Union(app3List,new RunItemComparer());
+            this.listview.ItemsSource = list;
         }
 
         private async Task<IEnumerable<RunItem>> LoadExecutableItemAsync()
@@ -126,6 +132,13 @@ namespace Windows_run_tool
             {
                 return list;
             }
+        }
+
+        private async Task<IEnumerable<RunItem>> LoadMsSettingsAsync()
+        {
+            var lang = CultureInfo.CurrentCulture.Name;
+            var html = await WebHelper.GetHtmlSource(MsSettingsUrl.Replace("{lang}", lang));
+            return RegexHelper.MatchRunItems(html);
         }
 
         #region Event

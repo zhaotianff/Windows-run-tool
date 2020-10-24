@@ -64,6 +64,7 @@
     <Compile Include="Compare\RunItemComparer.cs" />
     <Compile Include="Helper\EnvironmentVariablesExtension.cs" />
     <Compile Include="Helper\FileExtension.cs" />
+    <Compile Include="Helper\RegexHelper.cs" />
     <Compile Include="Helper\RegisterExtension.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -74,6 +75,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helper\DirectoryExtension.cs" />
+    <Compile Include="Helper\WebHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
