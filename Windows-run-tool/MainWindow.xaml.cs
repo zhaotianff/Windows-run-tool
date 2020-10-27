@@ -159,6 +159,14 @@ namespace Windows_run_tool
         {
             this.Close();
         }
+
+        private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbox_Command.Text))
+                return;
+
+            Clipboard.SetText(tbox_Command.Text);
+        }
         #endregion
     }
 }

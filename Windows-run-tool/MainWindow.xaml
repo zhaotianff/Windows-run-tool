@@ -20,7 +20,7 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
 
-            <ListView Name="listview" Margin="8" SelectionChanged="listview_SelectionChanged">
+            <ListView Name="listview" Margin="8" SelectionChanged="listview_SelectionChanged" MouseDoubleClick="listview_MouseDoubleClick">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="运行项" Width="200" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
