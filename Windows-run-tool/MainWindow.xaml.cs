@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -62,6 +65,11 @@ namespace Windows_run_tool
                     var pathArray = path.Split(';');
                     var pathTextArray = pathText.Split(';');
                     pathTextArray = pathTextArray.ToList().Select(x => x.ToLower()).ToArray();
+
+                    if (pathTextArray.Contains(".cpl") == false)
+                    {
+                        pathTextArray = pathTextArray.Append(".cpl").ToArray();
+                    }
 
                     foreach (var item in pathArray)
                     {
@@ -167,6 +175,56 @@ namespace Windows_run_tool
 
             Clipboard.SetText(tbox_Command.Text);
         }
+
+        private void Export_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
+            saveFileDialog.Filter = $"{FindResource("ExportFileType")}|*.txt";
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if(saveFileDialog.ShowDialog() == true)
+            {
+                var result = ExportToFile(listview.ItemsSource, saveFileDialog.FileName);
+
+                if(result == true)
+                {
+                    MessageBox.Show(FindResource("ExportSuccess").ToString());
+                }
+                else
+                {
+                    MessageBox.Show(FindResource("ExportFailed").ToString());
+                }
+            }
+        }
+
         #endregion
+
+        private bool ExportToFile(System.Collections.IEnumerable itemsSource, string fileName)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+                {
+                    using (StreamWriter sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine($"Windows-Run-Tool");
+                        sw.WriteLine(Assembly.GetExecutingAssembly().GetName().Version.ToString() + "\t" + DateTime.Now.ToString());
+                        sw.WriteLine();
+                        var headerInfo = $"{FindResource("RunItem").ToString().PadRight(45,' ')}" +
+                            $"{FindResource("Path").ToString().PadRight(55,' ')}" +
+                            $"{FindResource("Description").ToString()}";
+                        sw.WriteLine(headerInfo);
+                        foreach (RunItem runItem in itemsSource)
+                        {
+                            sw.WriteLine(runItem.ToString());
+                        }
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="RunItem">运行项</sys:String>
+    <sys:String x:Key="Path">路径</sys:String>
+    <sys:String x:Key="Description">描述</sys:String>
+    <sys:String x:Key="Command">选中的命令</sys:String>
+    <sys:String x:Key="Run">启动</sys:String>
+    <sys:String x:Key="OK">确定</sys:String>
+    <sys:String x:Key="Export">导出</sys:String>
+    <sys:String x:Key="ExportFileType">txt文件</sys:String>
+    <sys:String x:Key="ExportSuccess">导出成功</sys:String>
+    <sys:String x:Key="ExportFailed">导出失败</sys:String>
+    
+</ResourceDictionary>

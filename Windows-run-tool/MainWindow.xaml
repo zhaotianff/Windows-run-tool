@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Windows_run_tool"
         xmlns:tianxian="clr-namespace:TianXiaTech;assembly=BlurWindow"
         mc:Ignorable="d"
-        Title="Windows-run-tool" Height="450" Width="800" Loaded="BlurWindow_Loaded">
+        Title="Windows-run-tool" Height="950" Width="800" Loaded="BlurWindow_Loaded" WindowStartupLocation="CenterScreen" Icon="Icon/logo.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="27.3"/>
@@ -23,8 +23,8 @@
             <ListView Name="listview" Margin="8" SelectionChanged="listview_SelectionChanged" MouseDoubleClick="listview_MouseDoubleClick">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="运行项" Width="200" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
-                        <GridViewColumn Header="描述" Width="500" DisplayMemberBinding="{Binding Description}"></GridViewColumn>
+                        <GridViewColumn Header="{DynamicResource RunItem}" Width="350" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                        <GridViewColumn Header="{DynamicResource Description}" Width="400" DisplayMemberBinding="{Binding Description}"></GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -35,13 +35,14 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Label Content="选中的命令" VerticalAlignment="Center"/>
+                <Label Content="{DynamicResource Command}" VerticalAlignment="Center"/>
                 <TextBox Margin="10,3" Grid.Row="1" Name="tbox_Command" IsReadOnly="True"/>
             </Grid>
 
             <Grid  Grid.Row="2">
-                <Button Content="启动" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,120,0" Click="Run_Click"/>
-                <Button Content="确定" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,10,0" Click="Exit_Click"/>
+                <Button Content="{DynamicResource Run}" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,230,0" Click="Run_Click"/>
+                <Button Content="{DynamicResource OK}" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,120,0" Click="Exit_Click"/>
+                <Button Content="{DynamicResource Export}" IsDefault="True" VerticalAlignment="Center" HorizontalAlignment="Right" Width="88" Height="20" Margin="0,0,10,0" Click="Export_Click"/>
             </Grid>
         </Grid>
     </Grid>

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"   
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="RunItem">Run item</sys:String>
+    <sys:String x:Key="Path">Path</sys:String>
+    <sys:String x:Key="Description">Description</sys:String>
+    <sys:String x:Key="Command">Command</sys:String>
+    <sys:String x:Key="Run">Run</sys:String>
+    <sys:String x:Key="OK">OK</sys:String>
+    <sys:String x:Key="Export">Export</sys:String>
+    <sys:String x:Key="ExportFileType">txt file</sys:String>
+    <sys:String x:Key="ExportSuccess">Export success</sys:String>
+    <sys:String x:Key="ExportFailed">Export failed</sys:String>
+</ResourceDictionary>
