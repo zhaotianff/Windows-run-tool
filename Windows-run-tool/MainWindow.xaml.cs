@@ -30,6 +30,7 @@ namespace Windows_run_tool
     public partial class MainWindow : TianXiaTech.BlurWindow
     {
         private static readonly string MsSettingsUrl = "https://docs.microsoft.com/{lang}/windows/uwp/launch-resume/launch-settings-app";
+        private static readonly string CanonicalNamesUrl = "https://docs.microsoft.com/{lang}/windows/win32/shell/controlpanel-canonical-names";
 
         List<RunItem> runList = new List<RunItem>();
 
@@ -48,7 +49,8 @@ namespace Windows_run_tool
             var app1List = await LoadExecutableItemAsync();
             var app2List = await LoadRegisterRunItemAsync();
             var app3List = await LoadMsSettingsAsync();
-            var list = app1List.Union(app2List,new RunItemComparer()).Union(app3List,new RunItemComparer());
+            var app4List = await LoadControlPanelItemAsync();
+            var list = app1List.Union(app2List,new RunItemComparer()).Union(app3List,new RunItemComparer()).Union(app4List, new RunItemComparer());
             this.listview.ItemsSource = list;
         }
 
@@ -146,7 +148,43 @@ namespace Windows_run_tool
         {
             var lang = CultureInfo.CurrentCulture.Name;
             var html = await WebHelper.GetHtmlSource(MsSettingsUrl.Replace("{lang}", lang));
-            return RegexHelper.MatchRunItems(html);
+            return RegexHelper.MatchMsSettingRunItems(html);
+        }
+
+        private async Task<IEnumerable<RunItem>> LoadControlPanelItemAsync()
+        {
+            var lang = CultureInfo.CurrentCulture.Name;
+            var html = await WebHelper.GetHtmlSource(CanonicalNamesUrl.Replace("{lang}", lang));
+            return RegexHelper.MatchControlPanelRunItems(html);
+        }
+
+        private bool ExportToFile(System.Collections.IEnumerable itemsSource, string fileName)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+                {
+                    using (StreamWriter sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine($"Windows-Run-Tool");
+                        sw.WriteLine(Assembly.GetExecutingAssembly().GetName().Version.ToString() + "\t" + DateTime.Now.ToString());
+                        sw.WriteLine();
+                        var headerInfo = $"{FindResource("RunItem").ToString().PadRight(45, ' ')}" +
+                            $"{FindResource("Path").ToString().PadRight(55, ' ')}" +
+                            $"{FindResource("Description").ToString()}";
+                        sw.WriteLine(headerInfo);
+                        foreach (RunItem runItem in itemsSource)
+                        {
+                            sw.WriteLine(runItem.ToString());
+                        }
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         #region Event
@@ -160,7 +198,18 @@ namespace Windows_run_tool
 
         private void Run_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start(this.tbox_Command.Text.Trim());
+            var path = this.tbox_Command.Text.Trim();
+            var controlCommand = "control ";
+
+            //控制面板项以传参方式启动
+            if(path.StartsWith(controlCommand))
+            {
+                System.Diagnostics.Process.Start(controlCommand.Trim(),path.Replace(controlCommand,""));
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(path);
+            }
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -198,33 +247,6 @@ namespace Windows_run_tool
 
         #endregion
 
-        private bool ExportToFile(System.Collections.IEnumerable itemsSource, string fileName)
-        {
-            try
-            {
-                using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
-                {
-                    using (StreamWriter sw = new StreamWriter(fs))
-                    {
-                        sw.WriteLine($"Windows-Run-Tool");
-                        sw.WriteLine(Assembly.GetExecutingAssembly().GetName().Version.ToString() + "\t" + DateTime.Now.ToString());
-                        sw.WriteLine();
-                        var headerInfo = $"{FindResource("RunItem").ToString().PadRight(45,' ')}" +
-                            $"{FindResource("Path").ToString().PadRight(55,' ')}" +
-                            $"{FindResource("Description").ToString()}";
-                        sw.WriteLine(headerInfo);
-                        foreach (RunItem runItem in itemsSource)
-                        {
-                            sw.WriteLine(runItem.ToString());
-                        }
-                    }
-                }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        
     }
 }

@@ -22,7 +22,14 @@ namespace Windows_run_tool.Model
             }
             else
             {
-                return $"{Name.PadRight(45, ' ')}{WinAPI.ShortenPath(Path).PadRight(55, ' ')}{Description}";
+                var shortPath = WinAPI.ShortenPath(Path);
+
+                if(string.IsNullOrEmpty(shortPath))
+                {
+                    shortPath = Path;
+                }
+
+                return $"{Name.PadRight(45, ' ')}{shortPath.PadRight(55, ' ')}{Description}";
             }
            
         }

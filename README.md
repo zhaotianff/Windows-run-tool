@@ -1,5 +1,5 @@
 # Run-List  
-Windows 10 run list
+Here is a list of all running items supported in Windows+R
 
 <p align="center">
 <a href="https://github.com/zhaotianff/Windows-run-tool" target="_blank">
@@ -20,6 +20,13 @@ Windows 10 run list
  <img alt="All issues" src="https://img.shields.io/github/issues/zhaotianff/Windows-run-tool.svg" />
 </a>
 </p>
+
+## Run-list include the following item
+* All Executable item(.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL) in Path Environment Variables
+* Installed software that registered in Register
+* Control Panel Items(control.exe & .cpl)
+* MMC Items(.msc)
+* DLL Items that can be run by rundll32.exe
 
 ## Screenshots
 <div align="center">

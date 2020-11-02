@@ -28,17 +28,19 @@ namespace Windows_run_tool
         private void LoadLanguage()
         {
             var lang = CultureInfo.CurrentCulture.Name;
+            var path = "";
 
             if(lang == "zh-CN")
             {
-                ResourceDictionary resourceDictionary = new ResourceDictionary() { Source = new Uri("Resources/lang/zh-CN.xaml",UriKind.Relative) };
-                System.Windows.Application.Current.Resources.MergedDictionaries[0] = resourceDictionary;
+                path = "Resources/lang/zh-CN.xaml";
             }
             else
             {
-                ResourceDictionary resourceDictionary = new ResourceDictionary() { Source = new Uri("Resources/lang/en-US.xaml", UriKind.Relative) };
-                System.Windows.Application.Current.Resources.MergedDictionaries[0] = resourceDictionary;
+                path = "Resources/lang/en-US.xaml";
             }
+
+            ResourceDictionary resourceDictionary = new ResourceDictionary() { Source = new Uri(path, UriKind.Relative) };
+            System.Windows.Application.Current.Resources.MergedDictionaries[0] = resourceDictionary;
         }
     }
 }

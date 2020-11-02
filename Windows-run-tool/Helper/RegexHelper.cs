@@ -10,7 +10,7 @@ namespace Windows_run_tool.Helper
 {
     public class RegexHelper
     {
-        public static List<RunItem> MatchRunItems(string input)
+        public static List<RunItem> MatchMsSettingRunItems(string input)
         {
             //学艺不精啊哎          
             var tdPattern = "<td>(?<td>(.*))</td>";
@@ -51,6 +51,34 @@ namespace Windows_run_tool.Helper
                 }               
             }
 
+            return list;
+        }
+
+        public static List<RunItem> MatchControlPanelRunItems(string input)
+        {
+            //先忽略/page
+            //先使用简单粗暴的正则，有时间就优化一下
+            var list = new List<RunItem>();
+
+            var itemRegexPattern = @"<h3(.*)</h3>\s*<ul>\s*(?<=<ul>)[\s\S]*?(?=</ul>)";
+            var h3TagPattern = @"<h3[\s\S]*?>(?<value>[\s\S]*?)</h3>";
+            var strongPattern = @"</strong>:\s+(?<value>[\w\.]+)";
+            var matches = Regex.Matches(input, itemRegexPattern);
+
+            foreach (Match match in matches)
+            {
+                var matchH3 = Regex.Match(match.Value, h3TagPattern);
+                var matchStrong = Regex.Match(match.Value, strongPattern);
+
+                if (matchH3.Success == false || matchStrong.Success == false)
+                    continue;
+
+                RunItem runItem = new RunItem();
+                runItem.Description = matchH3.Groups["value"].Value;
+                runItem.Name = runItem.Description;
+                runItem.Path = "control /name " + matchStrong.Groups["value"].Value;
+                list.Add(runItem);
+            }
             return list;
         }
 
