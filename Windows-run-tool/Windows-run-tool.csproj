@@ -124,5 +124,8 @@
   <ItemGroup>
     <Resource Include="Icon\logo.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rundll32.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
