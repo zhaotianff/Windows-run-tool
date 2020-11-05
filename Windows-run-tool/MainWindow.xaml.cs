@@ -32,6 +32,8 @@ namespace Windows_run_tool
         private static readonly string MsSettingsUrl = "https://docs.microsoft.com/{lang}/windows/uwp/launch-resume/launch-settings-app";
         private static readonly string CanonicalNamesUrl = "https://docs.microsoft.com/{lang}/windows/win32/shell/controlpanel-canonical-names";
 
+        private static readonly string CurrentCultureName = CultureInfo.CurrentCulture.Name;
+
         List<RunItem> runList = new List<RunItem>();
 
         public MainWindow()
@@ -50,7 +52,8 @@ namespace Windows_run_tool
             var app2List = await LoadRegisterRunItemAsync();
             var app3List = await LoadMsSettingsAsync();
             var app4List = await LoadControlPanelItemAsync();
-            var list = app1List.Union(app2List,new RunItemComparer()).Union(app3List,new RunItemComparer()).Union(app4List, new RunItemComparer());
+            var app5List = await LoadRundll32ItemFromResAsync();
+            var list = app1List.Union(app2List,new RunItemComparer()).Union(app3List,new RunItemComparer()).Union(app4List, new RunItemComparer()).Union(app5List);
             this.listview.ItemsSource = list;
         }
 
@@ -146,16 +149,58 @@ namespace Windows_run_tool
 
         private async Task<IEnumerable<RunItem>> LoadMsSettingsAsync()
         {
-            var lang = CultureInfo.CurrentCulture.Name;
-            var html = await WebHelper.GetHtmlSource(MsSettingsUrl.Replace("{lang}", lang));
+            var html = await WebHelper.GetHtmlSource(MsSettingsUrl.Replace("{lang}", CurrentCultureName));
             return RegexHelper.MatchMsSettingRunItems(html);
         }
 
         private async Task<IEnumerable<RunItem>> LoadControlPanelItemAsync()
         {
-            var lang = CultureInfo.CurrentCulture.Name;
-            var html = await WebHelper.GetHtmlSource(CanonicalNamesUrl.Replace("{lang}", lang));
+            var html = await WebHelper.GetHtmlSource(CanonicalNamesUrl.Replace("{lang}", CurrentCultureName));
             return RegexHelper.MatchControlPanelRunItems(html);
+        }
+
+        private async Task<IEnumerable<RunItem>> LoadRundll32ItemFromResAsync()
+        {
+            List<RunItem> list = new List<RunItem>();
+
+            await Task.Run(()=> {
+                byte[] buffer = Encoding.UTF8.GetBytes(Properties.Resources.rundll32);
+
+                using (System.IO.MemoryStream ms = new MemoryStream(buffer))
+                {
+                    using (StreamReader sr = new StreamReader(ms, Encoding.UTF8))
+                    {
+                        var tempList = new List<string>();
+                        var str = sr.ReadLine();
+
+                        while (!string.IsNullOrEmpty(str))
+                        {
+                            tempList.Add(str);
+                            str = sr.ReadLine();
+                        }
+
+                        for (int i = 0; i < tempList.Count -2; i+=3)
+                        {
+                            RunItem runItem = new RunItem();
+                            runItem.Path = tempList[i + 2];
+                            runItem.Name = runItem.Path.Replace("rundll32.exe ","");
+
+                            if (CurrentCultureName == "zh-CN")
+                            {
+                                runItem.Description = tempList[i + 1];
+                            }
+                            else
+                            {
+                                runItem.Description = tempList[i];
+                            }                       
+                            list.Add(runItem);
+                        }
+                    }
+                }
+
+            });
+
+            return list;
         }
 
         private bool ExportToFile(System.Collections.IEnumerable itemsSource, string fileName)
@@ -200,11 +245,17 @@ namespace Windows_run_tool
         {
             var path = this.tbox_Command.Text.Trim();
             var controlCommand = "control ";
+            var rundll32Command = "rundll32.exe ";
 
+            //TODO 修改RunItem结构 增加启动参数
             //控制面板项以传参方式启动
             if(path.StartsWith(controlCommand))
             {
                 System.Diagnostics.Process.Start(controlCommand.Trim(),path.Replace(controlCommand,""));
+            }
+            else if(path.StartsWith(rundll32Command))
+            {
+                System.Diagnostics.Process.Start(rundll32Command.Trim(), path.Replace(rundll32Command, ""));
             }
             else
             {

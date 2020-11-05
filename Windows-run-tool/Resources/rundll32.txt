@@ -21,7 +21,7 @@ Set up additional clocks in the Date and Time applet
 rundll32.exe shell32.dll,Control_RunDLL timedate.cpl,,1
 Configure Desktop icons
 桌面图标设置
-rundll32.EXE shell32.dll,Control_RunDLL desk.cpl,,0
+rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,0
 Open Device Manager
 设备管理器
 rundll32.exe devmgr.dll DeviceManager_Execute
