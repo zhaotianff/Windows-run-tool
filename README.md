@@ -30,6 +30,27 @@ Here is a list of all running items supported in Windows+R
 
 ## Full list
 
+.cpl|Path|Description
+:--:|:--:|:--:
+appwiz.cpl|C:\Windows\system32\appwiz.cpl|Shell Application Manager
+desk.cpl|C:\Windows\system32\desk.cpl|Desktop Settings Control Panel
+FlashPlayerCPLApp.cpl|C:\Windows\system32\FLASHP~1.CPL|Adobe Flash Player Control Panel Applet
+hdwwiz.cpl|C:\Windows\system32\hdwwiz.cpl|Add Hardware Control Panel Applet
+inetcpl.cpl|C:\Windows\system32\inetcpl.cpl|Internet Control Panel
+intl.cpl| C:\Windows\system32\intl.cpl|Control Panel DLL
+main.cpl| C:\Windows\system32\main.cpl|Mouse and Keyboard Control Panel Applets
+mmsys.cpl|C:\Windows\system32\mmsys.cpl|Audio Control Panel
+ncpa.cpl| C:\Windows\system32\ncpa.cpl|Network Connections Control-Panel Stub
+powercfg.cpl|C:\Windows\system32\powercfg.cpl|Power Management Configuration Control Panel Applet
+sysdm.cpl|C:\Windows\system32\sysdm.cpl|System Applet for the Control Panel
+telephon.cpl|C:\Windows\system32\telephon.cpl|Telephony Control Panel
+timedate.cpl|C:\Windows\system32\timedate.cpl|Time Date Control Panel Applet
+firewall.cpl|C:\Windows\system32\firewall.cpl|Windows Firewall
+joy.cpl|C:\Windows\system32\joy.cpl|Game Controller
+
+
+<p align="center"><strong>Control Panel Items</strong></p>
+
 rundll32.exe|Description(en-US/zh-CN)
 :--:|:--:
 shell32.dll,Control_RunDLL desk.cpl,,2|Open the Desktop Background page of Personalization(壁纸设置)
