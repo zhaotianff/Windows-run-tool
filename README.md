@@ -48,8 +48,8 @@ timedate.cpl|C:\Windows\system32\timedate.cpl|Time Date Control Panel Applet
 firewall.cpl|C:\Windows\system32\firewall.cpl|Windows Firewall
 joy.cpl|C:\Windows\system32\joy.cpl|Game Controller
 
-
 <p align="center"><strong>Control Panel Items</strong></p>
+<br/>
 
 rundll32.exe|Description(en-US/zh-CN)
 :--:|:--:
