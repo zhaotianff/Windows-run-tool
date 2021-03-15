@@ -115,202 +115,203 @@ InetCpl.cpl,ClearMyTracksByProcess 255|Delete all browsing history in Internet E
 rundll32.exe SHELL32.DLL,ShellAbout
 ```
 
-<p align="center"><strong>DLL Items that can be run by rundll32.exe</strong></p>
+<p align="center"><strong>DLL Items that can be run by rundll32.exe</strong></p>  
+
 
 ms-settings|Description
 :--:|:--:
-ms-settings:workplace                                                                               Access work or school
-ms-settings:emailandaccounts                                                                        Email   app accounts
-ms-settings:otherusers                                                                              Family   other people
-ms-settings:assignedaccess                                                                          Set up a kiosk
-ms-settings:signinoptions                                                                           Sign-in options
-ms-settings:signinoptions-dynamiclock                                                               Sign-in options
-ms-settings:sync                                                                                    Sync your settings
-ms-settings:signinoptions-launchfaceenrollment                                                      Windows Hello setup
-ms-settings:signinoptions-launchfingerprintenrollment                                               Windows Hello setup
-ms-settings:yourinfo                                                                                Your info
-ms-settings:appsfeatures                                                                            Apps   Features
-ms-settings:appsfeatures-app                                                                        App features
-ms-settings:appsforwebsites                                                                         Apps for websites
-ms-settings:defaultapps                                                                             Default apps
-ms-settings:optionalfeatures                                                                        Manage optional features
-ms-settings:maps                                                                                    Offline Maps
-ms-settings:maps-downloadmaps                                                                       Offline Maps
-ms-settings:startupapps                                                                             Startup apps
-ms-settings:videoplayback                                                                           Video playback
-ms-settings:cortana-notifications                                                                   Cortana across my devices
-ms-settings:cortana-moredetails                                                                     More details
-ms-settings:cortana-permissions                                                                     Permissions   History
-ms-settings:cortana-windowssearch                                                                   Searching Windows
-ms-settings:cortana-language                                                                        Talk to Cortana
-ms-settings:cortana                                                                                 Talk to Cortana
-ms-settings:cortana-talktocortana                                                                   Talk to Cortana
-ms-settings:autoplay                                                                                AutoPlay
-ms-settings:bluetooth                                                                               Bluetooth
-ms-settings:connecteddevices                                                                        Connected Devices
-ms-settings:camera                                                                                  Default camera
-ms-settings:mousetouchpad                                                                           Mouse   touchpad
-ms-settings:pen                                                                                     Pen   Windows Ink
-ms-settings:printers                                                                                Printers   scanners
-ms-settings:devices-touchpad                                                                        Touchpad
-ms-settings:typing                                                                                  Typing
-ms-settings:usb                                                                                     USB
-ms-settings:wheel                                                                                   Wheel
-ms-settings:mobile-devices                                                                          Your phone
-ms-settings:easeofaccess-audio                                                                      Audio
-ms-settings:easeofaccess-closedcaptioning                                                           Closed captions
-ms-settings:easeofaccess-colorfilter                                                                Color filters
-ms-settings:easeofaccess-cursorandpointersize                                                       Cursor   pointer size
-ms-settings:easeofaccess-display                                                                    Display
-ms-settings:easeofaccess-eyecontrol                                                                 Eye control
-ms-settings:fonts                                                                                   Fonts
-ms-settings:easeofaccess-highcontrast                                                               High contrast
-ms-settings:easeofaccess-keyboard                                                                   Keyboard
-ms-settings:easeofaccess-magnifier                                                                  Magnifier
-ms-settings:easeofaccess-mouse                                                                      Mouse
-ms-settings:easeofaccess-narrator                                                                   Narrator
-ms-settings:easeofaccess-otheroptions                                                               Other options
-ms-settings:easeofaccess-speechrecognition                                                          Speech
-ms-settings:extras                                                                                  Extras
-ms-settings:gaming-broadcasting                                                                     Broadcasting
-ms-settings:gaming-gamebar                                                                          Game bar
-ms-settings:gaming-gamedvr                                                                          Game DVR
-ms-settings:gaming-gamemode                                                                         Game Mode
-ms-settings:quietmomentsgame                                                                        Playing a game full screen
-ms-settings:gaming-trueplay                                                                         TruePlay
-ms-settings:gaming-xboxnetworking                                                                   Xbox Networking
-ms-settings:holographic-audio                                                                       Audio and speech
-ms-settings:privacy-holographic-environment                                                         Environment
-ms-settings:holographic-headset                                                                     Headset display
-ms-settings:holographic-management                                                                  Uninstall
-ms-settings:network-airplanemode                                                                    Airplane mode
-ms-settings:proximity                                                                               Airplane mode
-ms-settings:network-cellular                                                                        Cellular   SIM
-ms-settings:datausage                                                                               Data usage
-ms-settings:network-dialup                                                                          Dial-up
-ms-settings:network-directaccess                                                                    DirectAccess
-ms-settings:network-ethernet                                                                        Ethernet
-ms-settings:network-wifisettings                                                                    Manage known networks
-ms-settings:network-mobilehotspot                                                                   Mobile hotspot
-ms-settings:nfctransactions                                                                         NFC
-ms-settings:network-proxy                                                                           Proxy
-ms-settings:network-status                                                                          Status
-ms-settings:network                                                                                 Status
-ms-settings:network-vpn                                                                             VPN
-ms-settings:network-wifi                                                                            Wi-Fi
-ms-settings:network-wificalling                                                                     Wi-Fi Calling
-ms-settings:personalization-background                                                              Background
-ms-settings:personalization-start-places                                                            Choose which folders appear on Start
-ms-settings:personalization-colors                                                                  Colors
-ms-settings:colors                                                                                  Colors
-ms-settings:personalization-glance                                                                  Glance
-ms-settings:lockscreen                                                                              Lock screen
-ms-settings:personalization-navbar                                                                  Navigation bar
-ms-settings:personalization                                                                         Personalization (category)
-ms-settings:personalization-start                                                                   Start
-ms-settings:taskbar                                                                                 Taskbar
-ms-settings:themes                                                                                  Themes
-ms-settings:mobile-devices                                                                          Your phone
-ms-settings:mobile-devices-addphone                                                                 Your phone
-ms-settings:mobile-devices-addphone-direct                                                          Your phone
-ms-settings:privacy-accessoryapps                                                                   Accessory apps
-ms-settings:privacy-accountinfo                                                                     Account info
-ms-settings:privacy-activityhistory                                                                 Activity history
-ms-settings:privacy-advertisingid                                                                   Advertising ID
-ms-settings:privacy-appdiagnostics                                                                  App diagnostics
-ms-settings:privacy-automaticfiledownloads                                                          Automatic file downloads
-ms-settings:privacy-backgroundapps                                                                  Background Apps
-ms-settings:privacy-calendar                                                                        Calendar
-ms-settings:privacy-callhistory                                                                     Call history
-ms-settings:privacy-webcam                                                                          Camera
-ms-settings:privacy-contacts                                                                        Contacts
-ms-settings:privacy-documents                                                                       Documents
-ms-settings:privacy-email                                                                           Email
-ms-settings:privacy-eyetracker                                                                      Eye tracker
-ms-settings:privacy-feedback                                                                        Feedback   diagnostics
-ms-settings:privacy-broadfilesystemaccess                                                           File system
-ms-settings:privacy                                                                                 General
-ms-settings:privacy-speechtyping                                                                    Inking   typing
-ms-settings:privacy-location                                                                        Location
-ms-settings:privacy-messaging                                                                       Messaging
-ms-settings:privacy-microphone                                                                      Microphone
-ms-settings:privacy-motion                                                                          Motion
-ms-settings:privacy-notifications                                                                   Notifications
-ms-settings:privacy-customdevices                                                                   Other devices
-ms-settings:privacy-phonecalls                                                                      Phone calls
-ms-settings:privacy-pictures                                                                        Pictures
-ms-settings:privacy-radios                                                                          Radios
-ms-settings:privacy-speech                                                                          Speech
-ms-settings:privacy-tasks                                                                           Tasks
-ms-settings:privacy-videos                                                                          Videos
-ms-settings:privacy-voiceactivation                                                                 Voice activation
-ms-settings:surfacehub-accounts                                                                     Accounts
-ms-settings:surfacehub-sessioncleanup                                                               Session cleanup
-ms-settings:surfacehub-calling                                                                      Team Conferencing
-ms-settings:surfacehub-devicemanagenent                                                             Team device management
-ms-settings:surfacehub-welcome                                                                      Welcome screen
-ms-settings:about                                                                                   About
-ms-settings:display-advanced                                                                        Advanced display settings
-ms-settings:apps-volume                                                                             App volume and device preferences
-ms-settings:batterysaver                                                                            Battery Saver
-ms-settings:batterysaver-settings                                                                   Battery Saver settings
-ms-settings:batterysaver-usagedetails                                                               Battery use
-ms-settings:clipboard                                                                               Clipboard
-ms-settings:display                                                                                 Display
-ms-settings:savelocations                                                                           Default Save Locations
-ms-settings:screenrotation                                                                          Display
-ms-settings:quietmomentspresentation                                                                Duplicating my display
-ms-settings:quietmomentsscheduled                                                                   During these hours
-ms-settings:deviceencryption                                                                        Encryption
-ms-settings:quiethours                                                                              Focus assist
-ms-settings:display-advancedgraphics                                                                Graphics Settings
-ms-settings:messaging                                                                               Messaging
-ms-settings:multitasking                                                                            Multitasking
-ms-settings:nightlight                                                                              Night light settings
-ms-settings:phone-defaultapps                                                                       Phone
-ms-settings:project                                                                                 Projecting to this PC
-ms-settings:crossdevice                                                                             Shared experiences
-ms-settings:tabletmode                                                                              Tablet mode
-ms-settings:taskbar                                                                                 Taskbar
-ms-settings:notifications                                                                           Notifications   actions
-ms-settings:remotedesktop                                                                           Remote Desktop
-ms-settings:phone                                                                                   Phone
-ms-settings:powersleep                                                                              Power   sleep
-ms-settings:sound                                                                                   Sound
-ms-settings:storagesense                                                                            Storage
-ms-settings:storagepolicies                                                                         Storage Sense
-ms-settings:dateandtime                                                                             Date   time
-ms-settings:regionlanguage-jpnime                                                                   Japan IME settings
-ms-settings:regionformatting                                                                        Region
-ms-settings:keyboard                                                                                Language
-ms-settings:regionlanguage                                                                          Language
-ms-settings:regionlanguage-bpmfime                                                                  Language
-ms-settings:regionlanguage-cangjieime                                                               Language
-ms-settings:regionlanguage-chsime-pinyin-domainlexicon                                              Language
-ms-settings:regionlanguage-chsime-pinyin-keyconfig                                                  Language
-ms-settings:regionlanguage-chsime-pinyin-udp                                                        Language
-ms-settings:regionlanguage-chsime-wubi-udp                                                          Language
-ms-settings:regionlanguage-quickime                                                                 Language
-ms-settings:regionlanguage-chsime-pinyin                                                            Pinyin IME settings
-ms-settings:speech                                                                                  Speech
-ms-settings:regionlanguage-chsime-wubi                                                              Wubi IME settings
-ms-settings:activation                                                                              Activation
-ms-settings:backup                                                                                  Backup
-ms-settings:delivery-optimization                                                                   Delivery Optimization
-ms-settings:findmydevice                                                                            Find My Device
-ms-settings:developers                                                                              For developers
-ms-settings:recovery                                                                                Recovery
-ms-settings:troubleshoot                                                                            Troubleshoot
-ms-settings:windowsdefender                                                                         Windows Security
-ms-settings:windowsinsider                                                                          Windows Insider Program
-ms-settings:windowsupdate                                                                           Windows Update
-ms-settings:windowsupdate-action                                                                    Windows Update
-ms-settings:windowsupdate-options                                                                   Windows Update-Advanced options
-ms-settings:windowsupdate-restartoptions                                                            Windows Update-Restart options
-ms-settings:windowsupdate-history                                                                   Windows Update-View update history
-ms-settings:workplace-provisioning                                                                  Provisioning
-ms-settings:provisioning                                                                            Provisioning
-ms-settings:windowsanywhere                                                                         Windows Anywhere
+ms-settings:workplace|             Access work or school
+ms-settings:emailandaccounts|      Email   app accounts
+ms-settings:otherusers|            Family   other people
+ms-settings:assignedaccess|        Set up a kiosk
+ms-settings:signinoptions|         Sign-in options
+ms-settings:signinoptions-dynamiclock|                     Sign-in options
+ms-settings:sync||Sync your settings
+ms-settings:signinoptions-launchfaceenrollment|            Windows Hello setup
+ms-settings:signinoptions-launchfingerprintenrollment|     Windows Hello setup
+ms-settings:yourinfo|              Your info
+ms-settings:appsfeatures|          Apps   Features
+ms-settings:appsfeatures-app|      App features
+ms-settings:appsforwebsites|       Apps for websites
+ms-settings:defaultapps|           Default apps
+ms-settings:optionalfeatures|      Manage optional features
+ms-settings:maps||Offline Maps
+ms-settings:maps-downloadmaps|     Offline Maps
+ms-settings:startupapps|           Startup apps
+ms-settings:videoplayback|         Video playback
+ms-settings:cortana-notifications| Cortana across my devices
+ms-settings:cortana-moredetails|   More details
+ms-settings:cortana-permissions|   Permissions   History
+ms-settings:cortana-windowssearch| Searching Windows
+ms-settings:cortana-language|      Talk to Cortana
+ms-settings:cortana|               Talk to Cortana
+ms-settings:cortana-talktocortana| Talk to Cortana
+ms-settings:autoplay|              AutoPlay
+ms-settings:bluetooth|             Bluetooth
+ms-settings:connecteddevices|      Connected Devices
+ms-settings:camera|                Default camera
+ms-settings:mousetouchpad|         Mouse   touchpad
+ms-settings:pen|| Pen   Windows Ink
+ms-settings:printers|              Printers   scanners
+ms-settings:devices-touchpad|      Touchpad
+ms-settings:typing|                Typing
+ms-settings:usb|| USB
+ms-settings:wheel|                 Wheel
+ms-settings:mobile-devices|        Your phone
+ms-settings:easeofaccess-audio|    Audio
+ms-settings:easeofaccess-closedcaptioning|                 Closed captions
+ms-settings:easeofaccess-colorfilter|                      Color filters
+ms-settings:easeofaccess-cursorandpointersize|             Cursor   pointer size
+ms-settings:easeofaccess-display|  Display
+ms-settings:easeofaccess-eyecontrol|                       Eye control
+ms-settings:fonts|                 Fonts
+ms-settings:easeofaccess-highcontrast|                     High contrast
+ms-settings:easeofaccess-keyboard| Keyboard
+ms-settings:easeofaccess-magnifier|Magnifier
+ms-settings:easeofaccess-mouse|    Mouse
+ms-settings:easeofaccess-narrator| Narrator
+ms-settings:easeofaccess-otheroptions|                     Other options
+ms-settings:easeofaccess-speechrecognition|                Speech
+ms-settings:extras|                Extras
+ms-settings:gaming-broadcasting|   Broadcasting
+ms-settings:gaming-gamebar|        Game bar
+ms-settings:gaming-gamedvr|        Game DVR
+ms-settings:gaming-gamemode|       Game Mode
+ms-settings:quietmomentsgame|      Playing a game full screen
+ms-settings:gaming-trueplay|       TruePlay
+ms-settings:gaming-xboxnetworking| Xbox Networking
+ms-settings:holographic-audio|     Audio and speech
+ms-settings:privacy-holographic-environment|               Environment
+ms-settings:holographic-headset|   Headset display
+ms-settings:holographic-management|Uninstall
+ms-settings:network-airplanemode|  Airplane mode
+ms-settings:proximity|             Airplane mode
+ms-settings:network-cellular|      Cellular   SIM
+ms-settings:datausage|             Data usage
+ms-settings:network-dialup|        Dial-up
+ms-settings:network-directaccess|  DirectAccess
+ms-settings:network-ethernet|      Ethernet
+ms-settings:network-wifisettings|  Manage known networks
+ms-settings:network-mobilehotspot| Mobile hotspot
+ms-settings:nfctransactions|       NFC
+ms-settings:network-proxy|         Proxy
+ms-settings:network-status|        Status
+ms-settings:network|               Status
+ms-settings:network-vpn|           VPN
+ms-settings:network-wifi|          Wi-Fi
+ms-settings:network-wificalling|   Wi-Fi Calling
+ms-settings:personalization-background|                    Background
+ms-settings:personalization-start-places|                  Choose which folders appear on Start
+ms-settings:personalization-colors|Colors
+ms-settings:colors|                Colors
+ms-settings:personalization-glance|Glance
+ms-settings:lockscreen|            Lock screen
+ms-settings:personalization-navbar|Navigation bar
+ms-settings:personalization|       Personalization (category)
+ms-settings:personalization-start| Start
+ms-settings:taskbar|               Taskbar
+ms-settings:themes|                Themes
+ms-settings:mobile-devices|        Your phone
+ms-settings:mobile-devices-addphone|                       Your phone
+ms-settings:mobile-devices-addphone-direct|                Your phone
+ms-settings:privacy-accessoryapps| Accessory apps
+ms-settings:privacy-accountinfo|   Account info
+ms-settings:privacy-activityhistory|                       Activity history
+ms-settings:privacy-advertisingid| Advertising ID
+ms-settings:privacy-appdiagnostics|App diagnostics
+ms-settings:privacy-automaticfiledownloads|                Automatic file downloads
+ms-settings:privacy-backgroundapps|Background Apps
+ms-settings:privacy-calendar|      Calendar
+ms-settings:privacy-callhistory|   Call history
+ms-settings:privacy-webcam|        Camera
+ms-settings:privacy-contacts|      Contacts
+ms-settings:privacy-documents|     Documents
+ms-settings:privacy-email|         Email
+ms-settings:privacy-eyetracker|    Eye tracker
+ms-settings:privacy-feedback|      Feedback   diagnostics
+ms-settings:privacy-broadfilesystemaccess|                 File system
+ms-settings:privacy|               General
+ms-settings:privacy-speechtyping|  Inking   typing
+ms-settings:privacy-location|      Location
+ms-settings:privacy-messaging|     Messaging
+ms-settings:privacy-microphone|    Microphone
+ms-settings:privacy-motion|        Motion
+ms-settings:privacy-notifications| Notifications
+ms-settings:privacy-customdevices| Other devices
+ms-settings:privacy-phonecalls|    Phone calls
+ms-settings:privacy-pictures|      Pictures
+ms-settings:privacy-radios|        Radios
+ms-settings:privacy-speech|        Speech
+ms-settings:privacy-tasks|         Tasks
+ms-settings:privacy-videos|        Videos
+ms-settings:privacy-voiceactivation|                       Voice activation
+ms-settings:surfacehub-accounts|   Accounts
+ms-settings:surfacehub-sessioncleanup|                     Session cleanup
+ms-settings:surfacehub-calling|    Team Conferencing
+ms-settings:surfacehub-devicemanagenent|                   Team device management
+ms-settings:surfacehub-welcome|    Welcome screen
+ms-settings:about|                 About
+ms-settings:display-advanced|      Advanced display settings
+ms-settings:apps-volume|           App volume and device preferences
+ms-settings:batterysaver|          Battery Saver
+ms-settings:batterysaver-settings| Battery Saver settings
+ms-settings:batterysaver-usagedetails|                     Battery use
+ms-settings:clipboard|             Clipboard
+ms-settings:display|               Display
+ms-settings:savelocations|         Default Save Locations
+ms-settings:screenrotation|        Display
+ms-settings:quietmomentspresentation|                      Duplicating my display
+ms-settings:quietmomentsscheduled| During these hours
+ms-settings:deviceencryption|      Encryption
+ms-settings:quiethours|            Focus assist
+ms-settings:display-advancedgraphics|                      Graphics Settings
+ms-settings:messaging|             Messaging
+ms-settings:multitasking|          Multitasking
+ms-settings:nightlight|            Night light settings
+ms-settings:phone-defaultapps|     Phone
+ms-settings:project|               Projecting to this PC
+ms-settings:crossdevice|           Shared experiences
+ms-settings:tabletmode|            Tablet mode
+ms-settings:taskbar|               Taskbar
+ms-settings:notifications|         Notifications   actions
+ms-settings:remotedesktop|         Remote Desktop
+ms-settings:phone|                 Phone
+ms-settings:powersleep|            Power   sleep
+ms-settings:sound|                 Sound
+ms-settings:storagesense|          Storage
+ms-settings:storagepolicies|       Storage Sense
+ms-settings:dateandtime|           Date   time
+ms-settings:regionlanguage-jpnime| Japan IME settings
+ms-settings:regionformatting|      Region
+ms-settings:keyboard|              Language
+ms-settings:regionlanguage|        Language
+ms-settings:regionlanguage-bpmfime|Language
+ms-settings:regionlanguage-cangjieime|                     Language
+ms-settings:regionlanguage-chsime-pinyin-domainlexicon|    Language
+ms-settings:regionlanguage-chsime-pinyin-keyconfig|        Language
+ms-settings:regionlanguage-chsime-pinyin-udp|              Language
+ms-settings:regionlanguage-chsime-wubi-udp|                Language
+ms-settings:regionlanguage-quickime|                       Language
+ms-settings:regionlanguage-chsime-pinyin|                  Pinyin IME settings
+ms-settings:speech|                Speech
+ms-settings:regionlanguage-chsime-wubi|                    Wubi IME settings
+ms-settings:activation|            Activation
+ms-settings:backup|                Backup
+ms-settings:delivery-optimization| Delivery Optimization
+ms-settings:findmydevice|          Find My Device
+ms-settings:developers|            For developers
+ms-settings:recovery|              Recovery
+ms-settings:troubleshoot|          Troubleshoot
+ms-settings:windowsdefender|       Windows Security
+ms-settings:windowsinsider|        Windows Insider Program
+ms-settings:windowsupdate|         Windows Update
+ms-settings:windowsupdate-action|  Windows Update
+ms-settings:windowsupdate-options| Windows Update-Advanced options
+ms-settings:windowsupdate-restartoptions|                  Windows Update-Restart options
+ms-settings:windowsupdate-history| Windows Update-View update history
+ms-settings:workplace-provisioning|Provisioning
+ms-settings:provisioning|          Provisioning
+ms-settings:windowsanywhere|       Windows Anywhere
 
 <p align="center"><strong>Windows 10 Modern UI Settings</strong></p>
 
