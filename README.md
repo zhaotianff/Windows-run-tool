@@ -27,6 +27,7 @@ Here is a list of all running items supported in Windows+R
 * Control Panel Items(control.exe & .cpl)
 * MMC Items(.msc)
 * DLL Items that can be run by rundll32.exe
+* Modern UI settings(Windows 10)
 
 ## Full list
 
@@ -49,6 +50,32 @@ firewall.cpl|C:\Windows\system32\firewall.cpl|Windows Firewall
 joy.cpl|C:\Windows\system32\joy.cpl|Game Controller
 
 <p align="center"><strong>Control Panel Items</strong></p>
+<br/>
+
+MMC Items|Descrpition
+:--:|:--:
+azman.msc|    C:\Windows\system32\azman.msc
+certlm.msc|   C:\Windows\system32\certlm.msc                         
+certmgr.msc|  C:\Windows\system32\certmgr.msc  
+comexp.msc|   C:\Windows\system32\comexp.msc  
+compmgmt.msc| C:\Windows\system32\compmgmt.msc  
+devmgmt.msc|  C:\Windows\system32\devmgmt.msc   
+diskmgmt.msc| C:\Windows\system32\diskmgmt.msc   
+eventvwr.msc| C:\Windows\system32\eventvwr.msc  
+fsmgmt.msc|   C:\Windows\system32\fsmgmt.msc 
+gpedit.msc|   C:\Windows\system32\gpedit.msc 
+gpmc.msc|     C:\Windows\system32\gpmc.msc                           
+gpme.msc|     C:\Windows\system32\gpme.msc
+lusrmgr.msc|  C:\Windows\system32\lusrmgr.msc
+perfmon.msc|  C:\Windows\system32\perfmon.msc  
+rsop.msc|     C:\Windows\system32\rsop.msc 
+services.msc| C:\Windows\system32\services.msc  
+tapimgmt.msc| C:\Windows\system32\tapimgmt.msc
+taskschd.msc| C:\Windows\system32\taskschd.msc
+tpm.msc|      C:\Windows\system32\tpm.msc   
+WF.msc|       C:\Windows\system32\WF.msc 
+
+<p align="center"><strong>MMC Items</strong></p>
 <br/>
 
 rundll32.exe|Description(en-US/zh-CN)
