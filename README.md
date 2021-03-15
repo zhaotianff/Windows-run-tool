@@ -52,28 +52,28 @@ joy.cpl|C:\Windows\system32\joy.cpl|Game Controller
 <p align="center"><strong>Control Panel Items</strong></p>
 <br/>
 
-MMC Items|Descrpition
+MMC Items|Path|Descrpition
 :--:|:--:
-azman.msc|    C:\Windows\system32\azman.msc
-certlm.msc|   C:\Windows\system32\certlm.msc                         
-certmgr.msc|  C:\Windows\system32\certmgr.msc  
-comexp.msc|   C:\Windows\system32\comexp.msc  
-compmgmt.msc| C:\Windows\system32\compmgmt.msc  
-devmgmt.msc|  C:\Windows\system32\devmgmt.msc   
-diskmgmt.msc| C:\Windows\system32\diskmgmt.msc   
-eventvwr.msc| C:\Windows\system32\eventvwr.msc  
-fsmgmt.msc|   C:\Windows\system32\fsmgmt.msc 
-gpedit.msc|   C:\Windows\system32\gpedit.msc 
-gpmc.msc|     C:\Windows\system32\gpmc.msc                           
-gpme.msc|     C:\Windows\system32\gpme.msc
-lusrmgr.msc|  C:\Windows\system32\lusrmgr.msc
-perfmon.msc|  C:\Windows\system32\perfmon.msc  
-rsop.msc|     C:\Windows\system32\rsop.msc 
-services.msc| C:\Windows\system32\services.msc  
-tapimgmt.msc| C:\Windows\system32\tapimgmt.msc
-taskschd.msc| C:\Windows\system32\taskschd.msc
-tpm.msc|      C:\Windows\system32\tpm.msc   
-WF.msc|       C:\Windows\system32\WF.msc 
+azman.msc|    C:\Windows\system32\azman.msc|
+certlm.msc|   C:\Windows\system32\certlm.msc|                         
+certmgr.msc|  C:\Windows\system32\certmgr.msc|  
+comexp.msc|   C:\Windows\system32\comexp.msc  |
+compmgmt.msc| C:\Windows\system32\compmgmt.msc | 
+devmgmt.msc|  C:\Windows\system32\devmgmt.msc   |
+diskmgmt.msc| C:\Windows\system32\diskmgmt.msc   |
+eventvwr.msc| C:\Windows\system32\eventvwr.msc  |
+fsmgmt.msc|   C:\Windows\system32\fsmgmt.msc |
+gpedit.msc|   C:\Windows\system32\gpedit.msc |
+gpmc.msc|     C:\Windows\system32\gpmc.msc    |                       
+gpme.msc|     C:\Windows\system32\gpme.msc|
+lusrmgr.msc|  C:\Windows\system32\lusrmgr.msc|
+perfmon.msc|  C:\Windows\system32\perfmon.msc | 
+rsop.msc|     C:\Windows\system32\rsop.msc |
+services.msc| C:\Windows\system32\services.msc|  
+tapimgmt.msc| C:\Windows\system32\tapimgmt.msc|
+taskschd.msc| C:\Windows\system32\taskschd.msc|
+tpm.msc|      C:\Windows\system32\tpm.msc   |
+WF.msc|       C:\Windows\system32\WF.msc |
 
 <p align="center"><strong>MMC Items</strong></p>
 <br/>
