@@ -85,5 +85,29 @@ namespace Windows_run_tool.Properties {
                 return ResourceManager.GetString("rundll32", resourceCulture);
             }
         }
+                  
+        /// <summary>
+        ///   Looks up a localized string similar to Display installed Windows Updates	
+        ///shell:AppUpdatesFolder
+        ///Open the user’s Start Menu\Administrative Tools folder (if any)	
+        ///shell:Administrative Tools
+        ///Open All Users Start Menu\Administrative Tools folder	
+        ///shell:Common Administrative Tools
+        ///Open the Public Application Data folder	
+        ///shell:Common AppData
+        ///Open the user’s Application Data folder	
+        ///shell:AppData
+        ///Open the user’s Application Data folder	
+        ///shell:Local AppData
+        ///Apps folder	
+        ///shell:appsFolder
+        ///Open the Temporary Internet Files folder	
+        ///shell:Ca [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string shell {
+            get {
+                return ResourceManager.GetString("shell", resourceCulture);
+            }
+        }
     }
 }

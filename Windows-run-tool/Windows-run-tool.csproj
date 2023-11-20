@@ -127,5 +127,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\rundll32.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shell.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

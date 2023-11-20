@@ -53,7 +53,8 @@ namespace Windows_run_tool
             var app3List = await LoadMsSettingsAsync();
             var app4List = await LoadControlPanelItemAsync();
             var app5List = await LoadRundll32ItemFromResAsync();
-            var list = app1List.Union(app2List,new RunItemComparer()).Union(app3List,new RunItemComparer()).Union(app4List, new RunItemComparer()).Union(app5List);
+            var app6List = await LoadShellShortcutItemFromResAsync();
+            var list = app1List.Union(app2List, new RunItemComparer()).Union(app3List, new RunItemComparer()).Union(app4List, new RunItemComparer()).Union(app5List).Union(app6List);
             this.listview.ItemsSource = list;
         }
 
@@ -198,6 +199,36 @@ namespace Windows_run_tool
                     }
                 }
 
+            });
+
+            return list;
+        }
+
+        private async Task<IEnumerable<RunItem>> LoadShellShortcutItemFromResAsync()
+        {
+            List<RunItem> list = new List<RunItem>();
+
+            await Task.Run(() => {
+                    using (StringReader sr = new StringReader(Properties.Resources.shell))
+                    {
+                        var tempList = new List<string>();
+                        var str = sr.ReadLine();
+
+                        while (!string.IsNullOrEmpty(str))
+                        {
+                            tempList.Add(str);
+                            str = sr.ReadLine();
+                        }
+
+                        for (int i = 0; i < tempList.Count - 1; i += 2)
+                        {
+                            RunItem runItem = new RunItem();
+                            runItem.Path = tempList[i + 1];
+                            runItem.Name = tempList[i + 1];
+                        runItem.Description = tempList[i];
+                            list.Add(runItem);
+                        }
+                    }
             });
 
             return list;
