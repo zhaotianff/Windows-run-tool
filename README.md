@@ -447,6 +447,7 @@ ms-settings:windowsanywhere|       Windows Anywhere
 | Open the Windows installation folder (usually \Windows)      | shell:Windows                      |
 
 <p align="center"><strong>Shell folder shotcuts</strong></p>
+The content of shell folder shorcuts is from https://ss64.com/nt/shell.html
 <br/>
 
 ## Screenshots
