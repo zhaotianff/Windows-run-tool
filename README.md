@@ -23,13 +23,15 @@ Here is a list of all running items supported in Windows+R
 
 ## Run-list include the following item
 * All Executable item(.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL) in Path Environment Variables
-* Installed software that registered in Register
+* Installed software that registered in Registry
 * Control Panel Items(control.exe & .cpl)
 * MMC Items(.msc)
 * DLL Items that can be run by rundll32.exe
 * Modern UI settings(Windows 10)
 
 ## Full list
+
+#### Control Panel Items
 
 .cpl|Path|Description
 :--:|:--:|:--:
@@ -49,8 +51,7 @@ timedate.cpl|C:\Windows\system32\timedate.cpl|Time Date Control Panel Applet
 firewall.cpl|C:\Windows\system32\firewall.cpl|Windows Firewall
 joy.cpl|C:\Windows\system32\joy.cpl|Game Controller
 
-<p align="center"><strong>Control Panel Items</strong></p>
-<br/>
+#### MMC Items
 
 MMC Items|Path
 :--:|:--:
@@ -75,8 +76,7 @@ taskschd.msc| C:\Windows\system32\taskschd.msc
 tpm.msc|      C:\Windows\system32\tpm.msc   
 WF.msc|       C:\Windows\system32\WF.msc 
 
-<p align="center"><strong>MMC Items</strong></p>
-<br/>
+#### DLL Items that can be run by rundll32.exe
 
 rundll32.exe|Description(en-US/zh-CN)
 :--:|:--:
@@ -142,9 +142,7 @@ InetCpl.cpl,ClearMyTracksByProcess 255|Delete all browsing history in Internet E
 rundll32.exe SHELL32.DLL,ShellAbout
 ```
 
-<p align="center"><strong>DLL Items that can be run by rundll32.exe</strong></p>  
-<br/>
-
+#### Windows 10/11 Modern UI Settings
 
 ms-settings|Description
 :--:|:--:
@@ -341,8 +339,7 @@ ms-settings:workplace-provisioning|Provisioning
 ms-settings:provisioning|          Provisioning
 ms-settings:windowsanywhere|       Windows Anywhere
 
-<p align="center"><strong>Windows 10 Modern UI Settings</strong></p>
-<br/>
+#### Shell folder shotcuts
 
 | Description                                                  | Shell: folder shortcut             |
 | ------------------------------------------------------------ | ---------------------------------- |
@@ -446,9 +443,25 @@ ms-settings:windowsanywhere|       Windows Anywhere
 | Open the Sample Videos folder                                | shell:SampleVideos                 |
 | Open the Windows installation folder (usually \Windows)      | shell:Windows                      |
 
-<p align="center"><strong>Shell folder shotcuts</strong></p>
 The content of shell folder shorcuts is from https://ss64.com/nt/shell.html
 <br/>
+<br/>
+
+#### Registry run items
+> depends on the software installed on your machine
+
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\App Paths
+HKEY_CLASSES_ROOT\APPLICATION
+```
+| Application|
+|-------------|
+|devenv.exe|
+|excel.exe|
+|mplayer2.exe|
+|...|
+
 
 ## Screenshots
 <div align="center">
